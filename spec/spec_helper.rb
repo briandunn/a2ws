@@ -7,5 +7,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'a2ws'
 
 Spec::Runner.configure do |config|
-  
+ def fixture file_name
+   YAML.load(File.open(File.expand_path(File.dirname(__FILE__) + "/fixtures/#{file_name}.yml")))
+ end
 end

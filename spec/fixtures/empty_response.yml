@@ -1,0 +1,73 @@
+--- 
+ItemSearchResponse: 
+  OperationRequest: 
+    Arguments: 
+      Argument: 
+      - Name: Operation
+        Value: ItemSearch
+      - Name: Service
+        Value: AWSECommerceService
+      - Name: AWSAccessKeyId
+        Value: AKIAJJES5KN2IIXQSSOA
+      - Name: SearchIndex
+        Value: Books
+      - Name: Keywords
+        Value: assdflasdjfasldkfjasdl
+    RequestId: !str 
+      str: 46ebabe5-abe2-44ff-a010-7b76cb0538c9
+      "@attributes": {}
+
+    RequestProcessingTime: !str 
+      str: "0.0196700000000000"
+      "@attributes": {}
+
+  Items: 
+    TotalPages: !str 
+      str: "0"
+      "@attributes": {}
+
+    Request: 
+      ItemSearchRequest: 
+        DeliveryMethod: !str 
+          str: Ship
+          "@attributes": {}
+
+        Keywords: !str 
+          str: assdflasdjfasldkfjasdl
+          "@attributes": {}
+
+        MerchantId: !str 
+          str: Amazon
+          "@attributes": {}
+
+        Condition: !str 
+          str: New
+          "@attributes": {}
+
+        ResponseGroup: !str 
+          str: Small
+          "@attributes": {}
+
+        SearchIndex: !str 
+          str: Books
+          "@attributes": {}
+
+      Errors: 
+        Error: 
+          Message: !str 
+            str: We did not find any matches for your request.
+            "@attributes": {}
+
+          Code: !str 
+            str: AWS.ECommerceService.NoExactMatches
+            "@attributes": {}
+
+      IsValid: !str 
+        str: "True"
+        "@attributes": {}
+
+    TotalResults: !str 
+      str: "0"
+      "@attributes": {}
+
+  xmlns: http://webservices.amazon.com/AWSECommerceService/2005-10-05
