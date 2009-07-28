@@ -16,10 +16,6 @@ begin
         ItemSearch.find('Harry Potter', :Books).size.should_not == 0
       end
 
-      it "should survive a search that returns a single result" do
-        results = ItemSearch.find("Something cool from canada", :Books)
-      end
-
     end
 
   end

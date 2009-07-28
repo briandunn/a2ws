@@ -8,7 +8,7 @@ module A2WS
 
       items = result["ItemSearchResponse"]["Items"]
       if items['Request']['IsValid'] == 'True'
-        items['Item'].collect do |i|
+        [ items['Item'] ].flatten.collect do |i|
           Item.new downcase_keys(i)
         end
       else
