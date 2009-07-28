@@ -1,4 +1,5 @@
 require 'spec'
+require 'yaml'
 require 'pp'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))

@@ -1,0 +1,72 @@
+--- 
+ItemSearchResponse: 
+  OperationRequest: 
+    Arguments: 
+      Argument: 
+      - Name: Operation
+        Value: ItemSearch
+      - Name: Service
+        Value: AWSECommerceService
+      - Name: AWSAccessKeyId
+        Value: AKIAJJES5KN2IIXQSSOA
+      - Name: SearchIndex
+        Value: Books
+      - Name: Keywords
+        Value: Something cool from canada
+    RequestId: !str 
+      str: 53b485a7-6bb7-4b3f-9c6d-fa9f2f1293dc
+      "@attributes": {}
+    RequestProcessingTime: !str 
+      str: "0.0551560000000000"
+      "@attributes": {}
+  Items: 
+    TotalPages: !str 
+      str: "1"
+      "@attributes": {}
+    Item: 
+      ItemAttributes: 
+        Author: !str 
+          str: Christopher A. Sawyer
+          "@attributes": {}
+        Title: !str 
+          str: "Something cool from Canada: powersport equipment design requires flowing, edgy forms, an understanding of the role of the rider, and a multi-disciplinary ... article from: Automotive Design & Production"
+          "@attributes": {}
+        ProductGroup: !str 
+          str: Book
+          "@attributes": {}
+        Manufacturer: !str 
+          str: Thomson Gale
+          "@attributes": {}
+      ASIN: !str 
+        str: B000Y757NE
+        "@attributes": {}
+      DetailPageURL: !str 
+        str: http://www.amazon.com/Something-cool-Canada-understanding-multi-disciplinary/dp/B000Y757NE%3FSubscriptionId%3DAKIAJJES5KN2IIXQSSOA%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB000Y757NE
+        "@attributes": {}
+    Request: 
+      ItemSearchRequest: 
+        DeliveryMethod: !str 
+          str: Ship
+          "@attributes": {}
+        Keywords: !str 
+          str: Something cool from canada
+          "@attributes": {}
+        MerchantId: !str 
+          str: Amazon
+          "@attributes": {}
+        Condition: !str 
+          str: New
+          "@attributes": {}
+        ResponseGroup: !str 
+          str: Small
+          "@attributes": {}
+        SearchIndex: !str 
+          str: Books
+          "@attributes": {}
+      IsValid: !str 
+        str: "True"
+        "@attributes": {}
+    TotalResults: !str 
+      str: "1"
+      "@attributes": {}
+  xmlns: http://webservices.amazon.com/AWSECommerceService/2005-10-05
