@@ -8,7 +8,7 @@ ItemSearchResponse:
       - Name: Service
         Value: AWSECommerceService
       - Name: AWSAccessKeyId
-        Value: AKIAJJES5KN2IIXQSSOA
+        Value: SECRET 
       - Name: SearchIndex
         Value: Books
       - Name: Keywords
