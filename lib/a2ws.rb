@@ -4,6 +4,7 @@ require 'activesupport'
 require 'pp'
 
 $:.unshift File.join(File.dirname(__FILE__),'..','lib')
+require 'a2ws/signature'
 require 'a2ws/base'
 require 'a2ws/methodize'
 require 'a2ws/item'
