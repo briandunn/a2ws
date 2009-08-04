@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{a2ws}
-  s.version = "0.1.12"
+  s.version = "0.1.13"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Shen", "Josh Owens"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "lib/a2ws/base.rb",
      "lib/a2ws/image.rb",
      "lib/a2ws/image_search.rb",
+     "lib/a2ws/signature.rb",
      "lib/a2ws/item.rb",
      "lib/a2ws/item_search.rb",
      "lib/a2ws/methodize.rb",
