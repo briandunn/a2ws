@@ -20,7 +20,7 @@ describe "A2WS Operations" do
   describe "Amazon Authentication" do
     it "occur when finding items" do
       ItemSearch.stubs(:timestamp).returns("2009-01-01T12:00:00Z")
-      #ItemSearch.stubs(:build_signature).returns("SIGNATURE")
+      ItemSearch.stubs(:build_signature).returns("SIGNATURE")
       expected_params = has_entries(
                           :query => has_entries(
                             :Timestamp => "2009-01-01T12:00:00Z",
@@ -28,13 +28,13 @@ describe "A2WS Operations" do
                             :Version => "2009-07-01"
                           )
                         )
-      ItemSearch.expects(:get).with("/onca/xml", expected_params).returns(AAWSCannedResponse.asin_response)
+      ItemSearch.expects(:get).with("/onca/xml", expected_params).returns(fixture('single_item_response'))
       ItemSearch.find("0316769177")
     end
 
     it "occur when searching items" do
       ItemSearch.stubs(:timestamp).returns("2009-01-01T12:00:00Z")
-      #ItemSearch.stubs(:build_signature).returns("SIGNATURE")
+      ItemSearch.stubs(:build_signature).returns("SIGNATURE")
       expected_params = has_entries(
                           :query => has_entries(
                             :Timestamp => "2009-01-01T12:00:00Z",
@@ -42,8 +42,8 @@ describe "A2WS Operations" do
                             :Version => "2009-07-01"
                           )
                         )
-      ItemSearch.expects(:get).with("/onca/xml", expected_params).returns(AAWSCannedResponse.search_response)
-      ItemSearch.search(:Title => "Ruby on Rails")
+      ItemSearch.expects(:get).with("/onca/xml", expected_params).returns(fixture('single_item_response'))
+      ItemSearch.find(:Title => "Ruby on Rails")
     end
 
     it "properly generate signatures" do

@@ -2,8 +2,6 @@ require 'spec'
 require 'yaml'
 require 'pp'
 require 'rubygems'
-gem 'mocha'
-require 'mocha'
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
@@ -13,6 +11,7 @@ Spec::Runner.configure do |config|
   def fixture file_name
     YAML.load(File.open(File.expand_path(File.dirname(__FILE__) + "/fixtures/#{file_name}.yml")))
   end
+  config.mock_with :mocha
 end
 begin
   conf = YAML::load(open(ENV['HOME'] + '/.a2ws'))
