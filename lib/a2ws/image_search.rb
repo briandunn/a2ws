@@ -4,8 +4,7 @@ module A2WS
   class ImageSearch < Base
     
     def self.find(item) 
-      items = get(request_url, :query => {:ItemId => item, :Operation => "ItemLookup", :ResponseGroup => "Images"})
-      puts items.inspect
+      items = get(request_uri, :query => {:ItemId => item, :Operation => "ItemLookup", :ResponseGroup => "Images"})
       if items['ItemLookupResponse']["Items"]["Request"]['IsValid'] == 'True'
         items["ItemLookupResponse"]["Items"]["Item"].delete("ImageSets")
         items["ItemLookupResponse"]["Items"]["Item"].delete("ASIN")

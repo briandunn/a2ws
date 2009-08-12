@@ -5,9 +5,7 @@ module A2WS
     def self.find(keywords, search_index = :All, options = {})
       options.merge!({:Keywords => keywords, :SearchIndex => search_index})
       query = sign_request(options)
-      puts query.inspect
       result = get( request_uri, :query => query )
-      puts result.inspect
 
       items = result["ItemSearchResponse"]["Items"]
       if items['Request']['IsValid'] == 'True'
