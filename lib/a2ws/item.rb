@@ -7,6 +7,10 @@ module A2WS
     def item_attributes
       ItemAttributes.new @data_hash["item_attributes"]
     end
+     
+    def offers 
+      Offers.new @data_hash["offers"]
+    end
     
     def images
       ImageSearch.find(@data_hash["asin"])
@@ -18,6 +22,9 @@ module A2WS
     include Methodize
     
   end
-  
+
+  class Offers
+    include Methodize
+  end
   
 end
