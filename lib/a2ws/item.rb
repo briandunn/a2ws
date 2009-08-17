@@ -1,6 +1,5 @@
 module A2WS
 
-
   class Item
     include Methodize
   
