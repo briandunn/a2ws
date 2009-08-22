@@ -13,4 +13,3 @@ require 'a2ws/item'
 require 'a2ws/image'
 require 'a2ws/item_search'
 require 'a2ws/image_search'
-APICache.start
