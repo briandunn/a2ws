@@ -14,6 +14,10 @@ module A2WS
       default_params :AWSAccessKeyId => key
     end
 
+    def self.cache_store=(cache_store)
+      APICache.store = cache_store
+    end
+
     def self.secret_key=(key)
       @@secret_key = key 
     end
