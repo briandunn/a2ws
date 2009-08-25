@@ -18,4 +18,10 @@ describe "A2WS Operations" do
 
   end
 
+  describe Item do
+    it "should have an image" do
+      Item.new fixture('single_item_response')['ItemSearchResponse']['Items']['Item']
+    end
+  end
+
 end
