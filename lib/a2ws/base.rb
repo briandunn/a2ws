@@ -33,13 +33,15 @@ module A2WS
       end
 
       def request(options)
-        APICache.get( request_uri + options.to_s) do 
+        APICache.get(( request_uri + options.to_s ).gsub(/\s/,'')) do 
           get( request_uri, :query => sign_request(options) )
         end
       end
-      
 
       private
+
+      def remove_whitespace(string)
+      end
 
       def downcase_keys(hash)
         new_hash = {}
