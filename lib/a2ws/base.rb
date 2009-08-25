@@ -40,9 +40,6 @@ module A2WS
 
       private
 
-      def remove_whitespace(string)
-      end
-
       def downcase_keys(hash)
         new_hash = {}
         hash.keys.each do |key|
