@@ -9,9 +9,14 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 require 'a2ws'
 
 Spec::Runner.configure do |config|
-  def fixture file_name
-    YAML.load(File.open(File.expand_path(File.dirname(__FILE__) + "/fixtures/#{file_name}.yml")))
+  def yaml_fixture file_name
+    YAML.load(fixture("#{file_name}.yml"))
   end
+
+  def fixture file_name
+    File.open(File.expand_path(File.dirname(__FILE__) + "/fixtures/#{file_name}")).read
+  end
+
   config.mock_with :mocha
 end
 begin

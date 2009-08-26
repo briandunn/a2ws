@@ -12,7 +12,6 @@ describe "A2WS Operations" do
 
   describe Item do
     it "should have an image" do
-      debugger
       ItemSearch.find('Harry Potter', :Books).first.images.size.should_not == 0
     end
 

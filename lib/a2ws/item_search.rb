@@ -7,7 +7,7 @@ module A2WS
       result = request(options)
       items = result["ItemSearchResponse"]["Items"]
       if items['Request']['IsValid'] == 'True'
-        [ items['Item'] ].flatten.compact.collect do |i|
+        [ items['Item'] ].flatten.reject(&:blank?).map do |i|
           Item.new downcase_keys(i)
         end
       else

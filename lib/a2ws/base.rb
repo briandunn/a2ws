@@ -1,5 +1,7 @@
 module A2WS
   class Base
+    RESPONSE_GROUPS = %w( Request ItemIds Small Medium Large Offers OfferFull OfferSummary OfferListings PromotionSummary PromotionDetails Variations VariationImages VariationMinimum VariationSummary TagsSummary Tags VariationMatrix VariationOffers ItemAttributes MerchantItemAttributes Tracks Accessories EditorialReview SalesRank BrowseNodes Images Similarities Subjects Reviews ListmaniaLists SearchInside PromotionalTag AlternateVersions Collections ShippingCharges RelatedItems )
+
     include HTTParty
     extend Signature
     base_uri 'http://ecs.amazonaws.com'
@@ -37,8 +39,6 @@ module A2WS
           get( request_uri, :query => sign_request(options) )
         end
       end
-
-      private
 
       def downcase_keys(hash)
         new_hash = {}
