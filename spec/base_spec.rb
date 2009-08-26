@@ -11,7 +11,7 @@ describe "Amazon Authentication" do
                           :Version => "2009-07-01"
                         )
                       )
-    ItemSearch.expects(:get).with("/onca/xml", expected_params).returns(fixture('single_item_response'))
+    ItemSearch.expects(:get).with("/onca/xml", expected_params).returns(yaml_fixture('single_item_response'))
     ItemSearch.find("0316769177")
   end
 
@@ -25,11 +25,12 @@ describe "Amazon Authentication" do
                           :Version => "2009-07-01"
                         )
                       )
-    ItemSearch.expects(:get).with("/onca/xml", expected_params).returns(fixture('single_item_response'))
+    ItemSearch.expects(:get).with("/onca/xml", expected_params).returns(yaml_fixture('single_item_response'))
     ItemSearch.find(:Title => "Ruby on Rails")
   end
 
   it "properly generate signatures" do
+    ItemSearch.stubs(:base_uri).returns("http://webservices.amazon.com")
     ItemSearch.stubs(:timestamp).returns("2009-01-01T12:00:00Z")
     ItemSearch.stubs(:secret_key).returns("1234567890")
     ItemSearch.stubs(:default_params).returns({ :Service => "AWSECommerceService",
