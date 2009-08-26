@@ -15,8 +15,9 @@ module A2WS
       if image_set = @data_hash['image_sets']['image_set']
         Base.downcase_keys(image_set).reject do |k,v|
           !(k =~ /_image$/) 
-        end.map do |size, data| 
-          Image.new(size, data)
+        end.inject({}) do |hash, (size, data)| 
+          hash[size.chomp('_image')] = Image.new(size, data)
+          next hash
         end
       else
         ImageSearch.find(@data_hash["asin"])

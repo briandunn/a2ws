@@ -5,8 +5,8 @@ describe ItemSearch do
     it "should return items that contain images" do
       ItemSearch.expects(:get).returns(Crack::XML.parse fixture('item_search_with_images.xml'))
       images = ItemSearch.find( 'ignored').first.images
-      images.should be_an_instance_of(Array)
-      for image in images
+      images.should be_an_instance_of(Hash)
+      for image in images.values
         image.should be_an_instance_of(Image)
         lambda { URI.parse(image.url) }.should_not raise_error
       end
