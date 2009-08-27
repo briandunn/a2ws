@@ -12,7 +12,7 @@ module A2WS
     end
     
     def images
-      if image_set = @data_hash['image_sets']['image_set']
+      if image_set = @data_hash['image_sets'].try(:[],'image_set')
         Base.downcase_keys(image_set).reject do |k,v|
           !(k =~ /_image$/) 
         end.inject({}) do |hash, (size, data)| 
